@@ -1,0 +1,11 @@
+.container{
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid black;
+    height: auto;
+    width: auto;
+}
+body{
+    margin: 0 0 0;
+}
