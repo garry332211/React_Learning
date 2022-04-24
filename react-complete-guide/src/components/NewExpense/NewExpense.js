@@ -1,12 +1,12 @@
 
-import ExpenseFrom from "./ExpenseFrom";
+import ExpenseForm from "./ExpenseForm";
 import './NewExpnese.css';
 import React from 'react'
 
 function NewExpense() {
   return (
     <div className="new-expense">
-        <ExpenseFrom/>
+        <ExpenseForm/>
 
     </div>
   )

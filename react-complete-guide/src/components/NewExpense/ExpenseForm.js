@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import "./ExpenseFrom.css";
+import "./ExpenseForm.css";
 
-function ExpenseFrom() {
+function ExpenseForm() {
     const [enteredTitle, setEnteredTitle] = useState(""); // for Title
     const [enteredAmount, setEnteredAmount] = useState(""); // for Amount
     const [enteredDate, setEnteredDate] = useState(""); // for Date
@@ -73,4 +73,4 @@ function ExpenseFrom() {
   );
 }
 
-export default ExpenseFrom;
+export default ExpenseForm;
