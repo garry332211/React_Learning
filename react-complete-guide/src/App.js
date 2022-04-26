@@ -12,9 +12,15 @@ function App() {
     { title: "House Rent", amount: 2000, date: new Date(2022, 3, 1) },
     { title: "Mortgage", amount: 550.22, date: new Date(2022, 4, 30) },
   ];
+
+  const addExpneseHandler = (expense) =>{
+
+    console.log("in App.js");
+    console.log(expense);
+  }
   return (
     <div>
-      <NewExpense/>
+      <NewExpense onAddExpense = {addExpneseHandler}/>
       <ExpenseData items={expense} />
      
     

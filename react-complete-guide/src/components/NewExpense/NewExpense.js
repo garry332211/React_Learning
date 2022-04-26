@@ -3,10 +3,20 @@ import ExpenseForm from "./ExpenseForm";
 import './NewExpnese.css';
 import React from 'react'
 
-function NewExpense() {
+function NewExpense(props) {
+
+  const formInputHandler =  (userInput) =>{
+          const newData = {
+            id: Math.random().toString(),
+            ...userInput,
+          };
+
+          props.onAddExpense(newData);
+  }
+ 
   return (
     <div className="new-expense">
-        <ExpenseForm/>
+        <ExpenseForm getDataFromForm={formInputHandler} />
 
     </div>
   )
