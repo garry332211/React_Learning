@@ -5,18 +5,21 @@ import React from 'react'
 
 function NewExpense(props) {
 
-  const formInputHandler =  (userInput) =>{
-          const newData = {
-            id: Math.random().toString(),
-            ...userInput,
-          };
+  const gettingInputHandler = (input) =>{
+          const newData ={
+            ...input,
+            id:  Math.random().toString(),
+            
+          }
 
-          props.onAddExpense(newData);
+         props.onAddExpense(newData);
+
   }
+ 
  
   return (
     <div className="new-expense">
-        <ExpenseForm getDataFromForm={formInputHandler} />
+        <ExpenseForm  inputDataForm ={gettingInputHandler}/>
 
     </div>
   )

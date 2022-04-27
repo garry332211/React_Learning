@@ -1,81 +1,94 @@
-import React, { useState } from "react";
 import "./ExpenseForm.css";
+import React, { useState } from "react";
 
 function ExpenseForm(props) {
-    const [enteredTitle, setEnteredTitle] = useState(""); // for Title
-    const [enteredAmount, setEnteredAmount] = useState(""); // for Amount
-    const [enteredDate, setEnteredDate] = useState(""); // for Date
+  //Lets Handle the From Inputs now
+  const [enteredTitle, setTitle] = useState("");
+  const [enteredAmount, setAmount] = useState("");
+  const [enteredDate, setDate] = useState("");
 
-  
-
-  //For Title
+  //Title Input
   const titleChangeHandler = (event) => {
-   setEnteredTitle(event.target.value);
-   
+    setTitle(event.target.value);
   };
 
-  //For Amount
+  //Amount Input
   const amountChangeHandler = (event) => {
-    setEnteredAmount(event.target.value)
+    setAmount(event.target.value);
   };
 
-  //For Date Chnge
+  //Date Input
   const dateChangeHandler = (event) => {
-    setEnteredDate(event.target.value)
+    setDate(event.target.value);
   };
 
-  //To Submit the Form
-   const submitHandler = (event) =>{
-       event.preventDefault(); // this prevents the form to refresh when submitted empty !!!!
+  //Form Submit Handling
+  const formInputHandler = (event) => {
+    //lets prevent the from by submitting when there are no values inserted
+    event.preventDefault();
 
-       const expenseData =  {
-           title: enteredTitle,
-           amount: enteredAmount,
-           date: new Date(enteredDate),
-       }
+    const getInputData = {
+      title: enteredTitle,
+      amount: enteredAmount,
+      date: new Date(enteredDate),
+    };
 
-     props.getDataFromForm(expenseData);
-       setEnteredTitle('');
-       setEnteredAmount('');
-       setEnteredDate('');
-    
-   }
+   
+
+    //nowtoClear The INPUTS one form submitted
+
+    props.inputDataForm(getInputData);
+
+    setAmount("");
+    setDate("");
+    setTitle("");
+  };
 
   return (
-    <form onSubmit={submitHandler}>
-      <div className="new-expense__controls">
-        <div className="new-expense__control">
-          <label>Title</label>
-          <input type="text" value={enteredTitle} onChange={titleChangeHandler} />
-        </div>
+    <div>
+      <form onSubmit={formInputHandler}>
+        {/* Title */}
+        <div className="new-expense__controls">
+          <div className="new-expense__control">
+            <label>Title</label>
+            <input
+              type="text"
+              onChange={titleChangeHandler}
+              value={enteredTitle}
+            />
+          </div>
 
-        <div className="new-expense__control">
-          <label>Amount</label>
-          <input
-            type="number"
-            min="0.01"
-            step="0.01"
-            onChange={amountChangeHandler}
-            value ={enteredAmount}
-          />
-        </div>
+          {/* Amount */}
+          <div className="new-expense__control">
+            <label>Amount</label>
+            <input
+              type="number"
+              min="0.01"
+              step="0.01"
+              onChange={amountChangeHandler}
+              value={enteredAmount}
+            />
+          </div>
 
-        <div className="new-expense__control">
-          <label>Date</label>
-          <input
-            type="date"
-            min="2019-01-01"
-            max="2023-12-31"
-            onChange={dateChangeHandler}
-            value={enteredDate}
-          />
-        </div>
+          {/* Date */}
+          <div className="new-expense__control">
+            <label>Date</label>
+            <input
+              type="date"
+              min="2019-01-01"
+              max="2023-12-31"
+              onChange={dateChangeHandler}
+              value={enteredDate}
+            />
+          </div>
 
-        <div className="new-expense__actions">
-          <button type="submit">Add Expense</button>
+          {/* Submit Button */}
+          <div className="new-expense__actions">
+            <button type="submit">Add Expense</button>
+          </div>
         </div>
-      </div>
-    </form>
+      </form>
+    </div>
   );
 }
 
