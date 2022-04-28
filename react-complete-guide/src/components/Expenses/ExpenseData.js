@@ -7,9 +7,12 @@ import ExpensesFilter from "./ExpensesFilter";
 function ExpenseData(props) {
   const [filterYear, setFilterDropdown] = useState("2020");
   const filterChangeHandler = (selectedYear) => {
-    console.log(selectedYear);
     setFilterDropdown(selectedYear);
   };
+
+  const filteredExpense = props.items.filter((expense) => {
+    return expense.date.getFullYear().toString() === filterYear;
+  });
   return (
     <div>
       <Card className="expenses">
@@ -18,17 +21,18 @@ function ExpenseData(props) {
           onChnageFilter={filterChangeHandler}
         />
 
-      
-
-        {props.items.map((expense) => (
+        {filteredExpense.length === 0 &&  <p>No Expenses Found </p>} 
+          {filteredExpense.length > 0 && 
+     
+        filteredExpense.map((expense) => (
           <ExpenseItem
+            key={expense.id}
             title={expense.title}
             amount={expense.amount}
             date={expense.date}
           />
+     
         ))}
-
-       
       </Card>
     </div>
   );
