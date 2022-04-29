@@ -11,18 +11,7 @@ const getInputData = [
     lastName: " ",
     email: " ",
   },
-  // {
-  //   id: "e2",
-  //   firstName: "Samules",
-  //   lastName: "Jakcson",
-  //   email: "sam@gmail.com}",
-  // },
-  // {
-  //   id: "e3",
-  //   firstName: "Harpreet",
-  //   lastName: "Kaur",
-  //   email: "happyguri2211@outlook.com",
-  // },
+
 ];
 
 function App() {
