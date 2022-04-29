@@ -1,7 +1,7 @@
 import "./Form.css";
 import React, { useState } from "react";
 
-const Form = () => {
+const Form = (props) => {
   //Using State to get User Input
 
   const [enteredFirstName, setFirstName] = useState("");
@@ -35,7 +35,9 @@ const Form = () => {
         email: enteredEmail,
 
     }
+    
 
+    props.fromForm(inputData);
     console.log(inputData);
 
     //Now lets clear the Form input fileds once form is submitted 
