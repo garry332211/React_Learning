@@ -38,7 +38,7 @@ const Form = (props) => {
     
 
     props.fromForm(inputData);
-    console.log(inputData);
+
 
     //Now lets clear the Form input fileds once form is submitted 
             setFirstName("");
