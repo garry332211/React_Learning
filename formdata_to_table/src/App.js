@@ -2,29 +2,40 @@ import React, { useState } from "react";
 
 import NavbarSearch from "./Components/NavbarSearch";
 import Output from "./Components/Output";
+import "./styles.css";
 
-const dummy_data = [
-  {entry:""}
-]
+const formInputs =[
+  {
+   id: "",
+   fname:" ",
+   lname:" ", 
+   mobile:" ", 
+   email:" "}
+];
 
-const App = () =>{
+const App = (props) =>{
 
-  const[userEntry, setEntry] = useState(dummy_data);
+  const [allInputs, setAllInputs]= useState(formInputs);
 
-  const finalHandler=(input)=>{
-    setEntry((prevEntry)=>{
-        return[input, ...prevEntry]
+  const finalInputHandler =(inputs) =>{
+    setAllInputs((prevData) =>{
+      return [inputs, ...prevData];
+
+     
     });
+
+    console.log(inputs)
    
-    }
+  }
+  
   
   return (
     <div className="App">
       
 
-      <NavbarSearch goToApp={finalHandler}/>
+      <NavbarSearch onFromSubmit = {finalInputHandler} />
      
-      <Output entries = {userEntry}/>
+     <Output userDetails={allInputs}/>
   
         </div>
   );
