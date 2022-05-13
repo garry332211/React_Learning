@@ -1,34 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 
-class SearchInput extends React.Component {
+function SearchInput (props){
+
   
-  constructor(props){
-    super(props);
-
-    this.state = {entry: ""};
-    this.inputHandler = this.inputHandler.bind(this);
-    this.formHandler = this.formHandler.bind(this);
-  }
+  const [input, setInput] = useState(" ");
   
-  //input Handling 
-  inputHandler(event){
-    this.setState({entry: event.target.value})
-   
-  }
-  //handle the form on submission 
-  formHandler(event){
-  event.preventDefault();
-  this.props.onSearchSubmit(this.state.entry);
-  }
 
 
-  render() {
-    return (
+    //input Handler
+    const inputHandler = (event)=>{
+      setInput(event.target.value)
+
+    }
+
+    //formHandler
+    const formHandler =(event) =>{
+      event.preventDefault();
+      
+      props.onSearchSubmit(input)
+
+    }
+ 
+  
+    return(
       <div className="ui segment">
-        <form className="ui form" onSubmit={this.formHandler}>
+        <form className="ui form" onSubmit={formHandler}>
           <div className="field">
             <div className="ui massive icon input">
-              <input type="text" placeholder="search..." onChange={this.inputHandler}
+              <input type="text" placeholder="search..." onChange={inputHandler}
              />
             
               <i type="submit" className="search icon"/>
@@ -36,8 +35,8 @@ class SearchInput extends React.Component {
           </div>
         </form>
       </div>
-    );
-  }
+    )
+  
 }
 
 export default SearchInput;
