@@ -1,43 +1,38 @@
-import React, { useState } from "react";
+import React from 'react'
+import Form from './Components/Form';
+import { useState } from 'react';
+import Output from './Components/Output';
+import HeaderMenu from './Components/HeaderMenu';
 
-import NavbarSearch from "./Components/NavbarSearch";
-import Output from "./Components/Output";
-import "./styles.css";
 
-const formInputs =[
-  {
-   id: "",
-   fname:" ",
-   lname:" ", 
-   mobile:" ", 
-   email:" "}
-];
+const data = [
+  {fullName: "", mobileNum: "", emailAddress:"", id: "",}
+]
+ const App = () => {
 
-const App = (props) =>{
+  const [allInputs, setAllInputs] = useState(data);
 
-  const [allInputs, setAllInputs]= useState(formInputs);
-
-  const finalInputHandler =(inputs) =>{
-    setAllInputs((prevData) =>{
-      return [inputs, ...prevData];
-
+  //Final Handler
+    const finalHandler = (inputs) =>{
      
-    });
-
-    console.log(inputs)
-   
-  }
-  
-  
+      setAllInputs((prevData) =>{
+        
+          return [inputs, ...prevData]
+      })
+      console.log(inputs)
+    }
   return (
-    <div className="App">
-      
+    <div>
 
-      <NavbarSearch onFromSubmit = {finalInputHandler} />
-     
-     <Output userDetails={allInputs}/>
-  
-        </div>
-  );
+    <HeaderMenu/> <br/>
+
+    <h1>Getting User Input And Outputing Into Table</h1>
+
+    <Form userInputsForm={finalHandler}/>
+
+    <h1>Results</h1>
+    <Output inputDetails ={allInputs}/>
+    </div>
+  )
 }
 export default App;
