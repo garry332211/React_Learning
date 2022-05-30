@@ -1,8 +1,8 @@
 import React from 'react'
-import Form from './Components/Form';
 import { useState } from 'react';
 import Output from './Components/Output';
 import HeaderMenu from './Components/HeaderMenu';
+import Addid from './Components/Addid';
 
 
 const data = [
@@ -28,7 +28,8 @@ const data = [
 
     <h1>Getting User Input And Outputing Into Table</h1>
 
-    <Form userInputsForm={finalHandler}/>
+    {/* <Form userInputsForm={finalHandler}/> */}
+    <Addid toAppFile ={finalHandler} />
 
     <h1>Results</h1>
     <Output inputDetails ={allInputs}/>
