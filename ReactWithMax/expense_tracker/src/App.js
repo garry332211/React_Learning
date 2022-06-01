@@ -1,18 +1,33 @@
 
+import { useState } from 'react';
 import './App.css';
+
 import  Expenses  from './Components/Expenses';
+import NewExpense from './Components/UserInput/NewExpense';
+
+const dummy = [
+  { id: "", date : new Date(2022,4,15),title :"Car Gas Fill Up",amount : 24.20,},
+  { id: "", date : new Date(2021,6,25),title :"Rent",amount : 2200,},
+  { id: "", date : new Date(2019,2,5),title :"Food",amount : 120,},
+ 
+]
 
 function App() {
 
-  const expenses = [
-    {  expenseDate : new Date(2022, 4, 30),expenseTitle :"Car Gas Fill Up",expensePrice : 24.20,},
-    {  expenseDate : new Date(2022, 4, 10),expenseTitle :"House Rent",expensePrice : 80.00,},
-    {  expenseDate : new Date(2022, 4, 22),expenseTitle :"Electiricity Bill",expensePrice : 180.00,}
-  ]
+    const [expenses, setExpenses] = useState(dummy);
+
+    const finalExpenseHandler = (desi)=>{
+      setExpenses((prevData) =>{
+            return  [desi, ...prevData];
+      });
+
+      console.log(desi)
+
+    };
   return (
     <div className="App">
       
-     
+    <NewExpense storedIdOpbject ={finalExpenseHandler}/>
     <Expenses items ={expenses}/>
    
     </div>
