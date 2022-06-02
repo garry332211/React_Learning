@@ -10,6 +10,11 @@
     font-weight: bold;
     margin-bottom: 0.5rem;
     display: block;
+    color:#ffffff;
+    font-family: 'Bebas Neue', cursive;
+ 
+    
+    
   }
   
   .new-expense__control input {
@@ -23,5 +28,11 @@
   
   .new-expense_actions {
     text-align: right;
+    position: relative;
+    left:10%;
+    top:25px;
+    font-family: 'Alfa Slab One', cursive;
+    font-weight: bolder;
     
   }
+

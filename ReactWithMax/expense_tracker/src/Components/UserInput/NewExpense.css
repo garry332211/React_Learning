@@ -1,5 +1,5 @@
 .new-expense {
-    background-color: #a892ee;
+  background: linear-gradient(90deg, rgba(152,90,74,1) 0%, rgba(0,0,0,1) 0%, rgba(93,105,137,1) 32%, rgba(42,117,190,1) 70%);
     padding: 1rem;
     margin: 2rem auto;
     width: 50rem;
@@ -18,6 +18,8 @@
     color: white;
     border-radius: 12px;
     margin-right: 1rem;
+    font-family: 'Alfa Slab One', cursive;
+    font-weight: bolder;
   }
   
   .new-expense button:hover,

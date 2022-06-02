@@ -31,7 +31,7 @@ function ExpenseForm(props) {
         //lets Store User Input In An Object
         const userInputs ={
             title: enteredTitle,
-            amount: enteredAmount,
+            amount: +enteredAmount,
             date:new Date(enteredDate),
         };
 
@@ -69,6 +69,7 @@ function ExpenseForm(props) {
         </div>
 
         <div className="new-expense_actions">
+        <button type="button" onClick={props.cancelAddingExpense}>Cancel</button>
           <button>Add Expense</button>
         </div>
       </div>

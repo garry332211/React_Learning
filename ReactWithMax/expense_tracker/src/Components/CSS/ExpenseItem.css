@@ -18,14 +18,16 @@
     flex-flow: column-reverse;
     justify-content: flex-start;
     flex: 1;
+    text-align: right;
   }
   
   .expense-item h2 {
     color: #3a3a3a;
-    font-size: 1rem;
+    font-size: 1.2rem;
     flex: 1;
     margin: 0 1rem;
     color: white;
+    font-family: 'Patrick Hand', cursive;
   }
   
   .expense-item__price {
@@ -36,6 +38,7 @@
     border: 1px solid white;
     padding: 0.5rem;
     border-radius: 12px;
+    
   }
   
   @media (min-width: 580px) {
@@ -47,7 +50,7 @@
     }
   
     .expense-item__description h2 {
-      font-size: 1.25rem;
+      font-size: 2.25rem;
     }
   
     .expense-item__price {

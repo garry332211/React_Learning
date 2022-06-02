@@ -8,7 +8,8 @@ import NewExpense from './Components/UserInput/NewExpense';
 const dummy = [
   { id: "", date : new Date(2022,4,15),title :"Car Gas Fill Up",amount : 24.20,},
   { id: "", date : new Date(2021,6,25),title :"Rent",amount : 2200,},
-  { id: "", date : new Date(2019,2,5),title :"Food",amount : 120,},
+  { id: "", date : new Date(2022,9,8),title :"Uni Fees",amount : 3000,},
+  { id: "", date : new Date(2022,2),title :"Cars & Bikes Rego& W.O.F",amount : 800,},
  
 ]
 

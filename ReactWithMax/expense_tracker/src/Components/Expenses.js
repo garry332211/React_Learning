@@ -1,23 +1,24 @@
 import React, { useState } from "react";
-import ExpenseItem from "./ExpenseItem";
 import Card from "./UI/Card";
 import "./CSS/Expenses.css";
 import ExpensesFilter from "./ExpenseFilter";
+import ExpensesList from "./ExpensesList";
+import ExpensesChrt from "./Charts/ExpensesChrt";
 
 const Expenses = (props) => {
-  const [filterYear, setFilterYear] = useState("2019");
+  const [filterYear, setFilterYear] = useState("2022");
 
   const filterYearChanger = (selectedYear) => {
     setFilterYear(selectedYear);
   };
 
-     //Handling Filter year so user can see the list by chosen Year
+     //Module 5 lecure 64. Handling Filter year so user can see the list by chosen Year
 
      const pickYear = props.items.filter(new1 => {
        return new1.date.getFullYear().toString() ===filterYear;
      })
 
-  
+
   return (
     <div>
       <Card className="expenses">
@@ -25,16 +26,8 @@ const Expenses = (props) => {
           defaultYear={filterYear}
           changeYear={filterYearChanger}
         />
-
-        {pickYear.map((expense,index) => (
-          <ExpenseItem
-          key ={index}
-            title={expense.title}
-            amount={expense.amount}
-            date={expense.date}
-          
-          />
-        ))}
+        <ExpensesChrt expenses={pickYear} />
+         <ExpensesList items={pickYear} />
       </Card>
     </div>
   );
