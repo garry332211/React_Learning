@@ -13,8 +13,8 @@ function HeaderMenu() {
        
        <ul>
           <li className='test'>Kiwi Gabroos</li>
-        <li>Contact</li>
-         <li>Music</li>         
+        <li>All Data</li>
+         <li>About</li>         
          <li  className='active'>Home</li>   
       
              

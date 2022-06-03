@@ -11,6 +11,7 @@ const Form =(props) =>{
     const [name, setName] = useState("")
     const [number, setNumber] = useState("")
     const [email, setEmail] = useState("")
+    const [id, setId] = useState("")
     
 
     //Full Name Handler 
@@ -31,6 +32,13 @@ const Form =(props) =>{
         
     }
 
+    //ID Feild Handler
+
+    const positionIDHandler =(event) =>{
+        setId(event.target.value)
+       
+    }
+
     //Form handler
 
     const formHandler =(event) =>{
@@ -40,12 +48,14 @@ const Form =(props) =>{
             name:name,
             email:email,
             number:number,
+            id:id,
 
-        }
+        };
 
         setName("");
         setEmail("");
         setNumber("");
+        setId("");
 
        props.userInputsForm(InputData); //Send it to the App Page
 
@@ -67,8 +77,12 @@ const Form =(props) =>{
 
             <label>Email: </label>
             <input className="input1" type="text" placeholder="gurvinde@gmail.com ..." onChange={emailHandler} value={email}/>
+
+            <label>Position: </label>
+            <input className="input1" type="text" placeholder="Manager, Employee, Boss" onChange={positionIDHandler} value={id}/>
                 <br /><br />
           <button type="submit">Submit</button>
+          <button onClick={props.hideFormArea} type="button">Cancel</button>
         </form>
     </div>
 

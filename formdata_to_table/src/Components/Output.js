@@ -1,21 +1,43 @@
-import React from 'react'
+import React,{useState} from 'react'
+
 import "../Components/styles.css";
+import SearchByFilter from './SearchByFilter';
+
 
 function Output(props) {
+
+    const [defaultSection, setSection] = useState("name");
+
+    const getDataByFilter =(selectedFilter)=>{
+      
+       setSection(selectedFilter)
+       console.log(selectedFilter)
+    }
+
+    //Trying To Sort Input
+    const pickData = props.inputDetails.filter(var1 =>{
+        return var1.id === defaultSection;
+    })
+ 
+    console.log()
   return (
     <div>
+         <SearchByFilter 
+        defaultFilter={defaultSection}
+        onChangeFilter={getDataByFilter}/>
         <table id='customers'>
             <thead>
                 <tr>
-                    <th>ID</th>
+                    <th>Position</th>
                     <th>Full Name</th>
                     <th>Email</th>
                     <th>Number</th>
                 </tr>
             </thead>
-
+           
             <tbody>
-                {props.inputDetails.map((details,index) =>
+                
+                {pickData.map((details,index) =>
               
                 <tr key={index}>
                     <td>{details.id}</td>
