@@ -2,12 +2,19 @@ import React from 'react'
 
 function BirthdayDisplayer(props) {
   return (
-    <div>
-          <p>{props.name } 
+ 
+<div>
+  
+           <h1> {props.name }
+         
           { props.birthdayDate}
-          {props.bdayMonth}</p>
+          
+          {props.bdayMonth}</h1>
+      
+     
     </div>
   )
 }
 
 export default BirthdayDisplayer
+

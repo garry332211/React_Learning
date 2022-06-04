@@ -1,4 +1,4 @@
-
+import React from "react";
 
 const Dropwdown = (props) => {
 
@@ -9,8 +9,8 @@ const selectMonth =(event) =>{
  
 
   return (
-    <div>
-        <select onChange={selectMonth} value={props.selected}>
+    <div className="container">
+        <select className="form-select  w-25 "  onChange={selectMonth} value={props.selected}>
           <option value='January'>January</option>
           <option value='February'>February</option>
           <option value='March'>March</option>
@@ -30,3 +30,4 @@ const selectMonth =(event) =>{
 };
 
 export default Dropwdown;
+

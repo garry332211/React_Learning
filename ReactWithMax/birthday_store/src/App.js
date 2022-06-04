@@ -1,6 +1,7 @@
-
+import React,{useState} from 'react';
 import './App.css';
 import BirthdayDates from './Components/BirthdayDates';
+import BirthdateForm from './Components/UserInput/BirthdateForm';
 
 
 function App() {
@@ -30,9 +31,20 @@ function App() {
     {name:"Mummy", birthdayDate: "16/12/1965", bdayMonth: "December"},
         //More Will Be Added IN the future    
 ]
+
+const [allInputs, setallinputs] = useState(allDates);
+
+const finalHandler = (inputs) =>{
+  setallinputs((prevData) =>{
+return[...prevData, inputs]
+  })
+
+  console.log(inputs, "From App.js");
+}
   return (
     <div className="App">
-     <BirthdayDates allDates={allDates} />
+      <BirthdateForm formInputData={finalHandler}/>
+     <BirthdayDates allDates={allInputs} />
     </div>
   );
 }

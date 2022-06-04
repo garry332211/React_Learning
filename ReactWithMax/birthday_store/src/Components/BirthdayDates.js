@@ -2,6 +2,7 @@ import React from 'react'
 import BirthdayDisplayer from './BirthdayDisplayer'
 import Dropwdown from './Dropdown'
 import { useState } from 'react'
+
 function BirthdayDates(props) {
 
     const [selectedMonth, setSelectedMonth] = useState("July") // state is used to give it a default year
@@ -15,7 +16,8 @@ function BirthdayDates(props) {
     })
   return (
     <div>
-
+      
+        <br/>
         <Dropwdown onChangeMonth={monthChangerHandler}
         selected={selectedMonth}/>
         <br/>
