@@ -16,7 +16,7 @@ function BirthdayDates(props) {
   });
 
   return (
-    <div className="container">
+    <div>
       <br />
       <Dropwdown onChangeMonth={monthChangerHandler} selected={selectedMonth} />
       <br />
