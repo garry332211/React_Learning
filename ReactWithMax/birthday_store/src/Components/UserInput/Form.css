@@ -1,0 +1,160 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    color: #fff;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    /* background: linear-gradient(195deg, #05073a, #dc0606ca); */
+    background-image: url("https://images.wallpaperscraft.com/image/single/blur_gradient_abstraction_197425_1920x1080.jpg");
+
+}
+
+.container{
+    max-width: 700px;
+    width: 100%;
+    padding: 25px 30px;
+    border-radius: 25px;
+    background: linear-gradient(90deg, rgba(56,188,189,1) 20%, rgba(194,64,126,1) 75%);
+}
+
+.container .heading{
+    font-size: 35px;
+    font-weight: 500;
+    position: relative;
+    text-align: center;
+    padding: 0 0 20px 0;
+    
+}
+
+.container .heading::before{
+    content: '';
+    position: absolute;
+    height:3px;
+    left:0;
+    bottom:0;
+    width: 100%;
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+}
+.container form .card-details{
+    margin-top: 25px;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-size: x-large;
+  
+}
+
+form .card-details .card-box{
+    width: calc(100% / 2 -20px);
+    margin-bottom: 15px;
+
+}
+
+form .card-details .card-box .details{
+    display:block;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+.card-details .card-box input {
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    padding-left:15px ;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+
+.card-details .card-box input:focus,
+.card-details .card-box input:valid{
+    border-color:#9b59b6;
+
+}
+
+form .button input {
+    text-align: center;
+}
+
+.buttonHide{
+    padding: 10px 5px;
+    margin: 25px 10px 0 0;
+    height: 50%;
+    width: 100%;
+    outline: none;
+    color: rgb(255, 255, 255);
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius:5px;
+    letter-spacing: 5px;
+    background: linear-gradient(-135deg, #05073a, #dc0606ca);
+    cursor: pointer;
+}
+form .button input {
+    padding: 5px 5px;
+    margin: 37px 10px 0 0;
+    height: 45%;
+    width: 100%;
+    outline: none;
+    color: rgb(255, 255, 255);
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius:5px;
+    letter-spacing: 5px;
+    background: linear-gradient(-135deg, #05073a, #dc0606ca);
+
+}
+
+form .button input:hover{
+    cursor: pointer;
+    color: rgb(115, 255, 0);
+}
+
+@media(max-width:584px) {
+    .container{
+        max-width: 100%;
+    }
+
+    form .card-details .card-box{
+        max-width: 100%;
+        margin-bottom: 15px;
+    }
+
+    form .button input {
+        padding: 10px 5px;
+        margin: 25px 10px 0 0;
+        height:70%;
+        width: 100%;
+        outline: none;
+        color: rgb(255, 255, 255);
+        border: none;
+        font-size: 18px;
+        font-weight: 500;
+        border-radius:5px;
+        letter-spacing: 5px;
+        background: linear-gradient(-135deg, #05073a, #dc0606ca);
+    
+    }
+
+    .container{
+        max-width: 700px;
+        width: 100%;
+        padding-left:35px;
+        border-radius: 25px;
+        background: linear-gradient(90deg, rgba(56,188,189,1) 20%, rgba(194,64,126,1) 75%);
+    }
+    
+
+
+}
+

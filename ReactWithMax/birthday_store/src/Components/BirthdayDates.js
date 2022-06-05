@@ -1,36 +1,36 @@
-import React from 'react'
-import BirthdayDisplayer from './BirthdayDisplayer'
-import Dropwdown from './Dropdown'
-import { useState } from 'react'
+import React from "react";
+import BirthdayDisplayer from "./BirthdayDisplayer";
+import Dropwdown from "./Dropdown";
+import { useState } from "react";
 
 function BirthdayDates(props) {
+  const [selectedMonth, setSelectedMonth] = useState("January"); // state is used to give it a default year
 
-    const [selectedMonth, setSelectedMonth] = useState("July") // state is used to give it a default year
-    const monthChangerHandler =(pickMonth)=>{
-        console.log(pickMonth);
-        setSelectedMonth(pickMonth);
-    }
+  const monthChangerHandler = (pickMonth) => {
+    console.log(pickMonth);
+    setSelectedMonth(pickMonth);
+  };
 
-    const pickMonth = props.allDates.filter(newVar =>{
-        return newVar.bdayMonth === selectedMonth;
-    })
+  const pickMonth = props.allDates.filter((newVar) => {
+    return newVar.bdayMonth === selectedMonth;
+  });
+
   return (
-    <div>
-      
-        <br/>
-        <Dropwdown onChangeMonth={monthChangerHandler}
-        selected={selectedMonth}/>
-        <br/>
-        {pickMonth.map((dates, indexKey) => 
+    <div className="container">
+      <br />
+      <Dropwdown onChangeMonth={monthChangerHandler} selected={selectedMonth} />
+      <br />
 
-       <BirthdayDisplayer 
-       key={indexKey}
-       name={dates.name}
-       birthdayDate={dates.birthdayDate}
-       bdayMonth={dates.bdayMonth}/>)}
-
-</div>
-  )
+      {pickMonth.map((dates, indexKey) => (
+        <BirthdayDisplayer
+          key={indexKey}
+          name={dates.name}
+          birthdayDate={dates.birthdayDate}
+          bdayMonth={dates.bdayMonth}
+        />
+      ))}
+    </div>
+  );
 }
 
-export default BirthdayDates
+export default BirthdayDates;
