@@ -10,7 +10,7 @@ const selectMonth =(event) =>{
 
   return (
     <div className="container">
-        <select className="form-select  w-25 "  onChange={selectMonth} value={props.selected}>
+        <select onChange={selectMonth} value={props.selected}>
           <option value='January'>January</option>
           <option value='February'>February</option>
           <option value='March'>March</option>

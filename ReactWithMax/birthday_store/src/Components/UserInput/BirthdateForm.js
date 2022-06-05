@@ -21,8 +21,8 @@ function BirthdateForm(props) {
     event.preventDefault();
     const inputData = {
       name: name,
-      bDate: bDate,
-      month: month,
+      birthdayDate: bDate,
+      bdayMonth: month,
     };
     props.formInputData(inputData);
 
@@ -40,7 +40,6 @@ function BirthdateForm(props) {
           <span className="details">Name</span>
           <input
             type="text"
-            id="inputEmail4"
             onChange={inputName}
             value={name}
           />

@@ -2,6 +2,7 @@ import React from "react";
 import BirthdayDisplayer from "./BirthdayDisplayer";
 import Dropwdown from "./Dropdown";
 import { useState } from "react";
+// import styles from "./BirthdayDate.module.css"
 
 function BirthdayDates(props) {
   const [selectedMonth, setSelectedMonth] = useState("January"); // state is used to give it a default year
@@ -16,7 +17,7 @@ function BirthdayDates(props) {
   });
 
   return (
-    <div>
+    <ul >
       <br />
       <Dropwdown onChangeMonth={monthChangerHandler} selected={selectedMonth} />
       <br />
@@ -29,7 +30,7 @@ function BirthdayDates(props) {
           bdayMonth={dates.bdayMonth}
         />
       ))}
-    </div>
+    </ul>
   );
 }
 

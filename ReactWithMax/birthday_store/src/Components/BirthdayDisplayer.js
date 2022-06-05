@@ -3,7 +3,7 @@ import React from 'react'
 function BirthdayDisplayer(props) {
   return (
  
-<div>
+<div className='container'>
   
            <h1> {props.name }
          

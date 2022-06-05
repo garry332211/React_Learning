@@ -1,7 +1,9 @@
 import React,{useState} from 'react';
 import './App.css';
 import BirthdayDates from './Components/BirthdayDates';
-import BirthdateForm from './Components/UserInput/BirthdateForm';
+import BirthdateForm from "./Components/UserInput/BirthdateForm"
+
+
 
 
 function App() {
@@ -43,8 +45,9 @@ return[...prevData, inputs]
 }
   return (
     <div className="App">
-      <BirthdateForm formInputData={finalHandler}/>
-     <BirthdayDates allDates={allInputs} />
+   
+    <BirthdateForm  formInputData={finalHandler}/>
+    <BirthdayDates allDates={allInputs}/>
     </div>
   );
 }
