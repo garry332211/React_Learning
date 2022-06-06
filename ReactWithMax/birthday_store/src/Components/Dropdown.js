@@ -1,5 +1,5 @@
 import React from "react";
-
+import styles from "./BirthdayDate.module.css"
 const Dropwdown = (props) => {
 
    
@@ -9,8 +9,8 @@ const selectMonth =(event) =>{
  
 
   return (
-    <div className="container">
-        <select onChange={selectMonth} value={props.selected}>
+    <div className={styles.container}>
+        <select className={styles.jatt} onChange={selectMonth} value={props.selected}>
           <option value='January'>January</option>
           <option value='February'>February</option>
           <option value='March'>March</option>

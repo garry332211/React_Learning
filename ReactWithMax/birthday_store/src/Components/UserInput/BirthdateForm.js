@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Form.css"
+import styles from "./Form.module.css"
 function BirthdateForm(props) {
   const [name, setName] = useState("");
   const [bDate, setBdate] = useState("");
@@ -31,13 +31,13 @@ function BirthdateForm(props) {
     setName("");
   };
   return (
-    <div className="container">
-        <div className="heading">Birthday Finder</div>
-      <form className="" onSubmit={formSubmitHandler}>
-        <div className="card-details">
-          <div className="card-box">
+    <div className={styles.container}>
+        <div className={styles.heading}>Birthday Finder</div>
+      <form  onSubmit={formSubmitHandler}>
+        <div className={styles['card-details']}>
+          <div className={styles['card-box']}>
             
-          <span className="details">Name</span>
+          <span className={styles.details}>Name</span>
           <input
             type="text"
             onChange={inputName}
@@ -45,8 +45,8 @@ function BirthdateForm(props) {
           />
         </div>
 
-        <div className="card-box">
-          <span className="details">Birth Date</span>
+        <div className={styles['card-box']}>
+          <span className={styles.details}>Birth Date</span>
           <input
             type="text"         
             placeholder="07/07/1994"
@@ -55,8 +55,8 @@ function BirthdateForm(props) {
           />
        </div>
 
-       <div className="card-box"> 
-          <span className="details">Birthday Month</span>
+       <div className={styles['card-box']}> 
+          <span className={styles.details}>Birthday Month</span>
           <input
             type="text"      
             placeholder="Month"
@@ -64,8 +64,11 @@ function BirthdateForm(props) {
             value={month}
           />
         </div>
-         <div className="button">
-        <input type="submit" />
+         <div className={styles.button}>
+        <button type="submit">Submit</button>
+        </div>
+         <div className={styles.button}>
+        <button onClick={props.hideForm}>Cancel</button>
         </div>
       </div>
       </form>

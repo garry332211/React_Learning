@@ -2,10 +2,10 @@ import React from "react";
 import BirthdayDisplayer from "./BirthdayDisplayer";
 import Dropwdown from "./Dropdown";
 import { useState } from "react";
-// import styles from "./BirthdayDate.module.css"
+import styles from "./BirthdayDate.module.css"
 
 function BirthdayDates(props) {
-  const [selectedMonth, setSelectedMonth] = useState("January"); // state is used to give it a default year
+  const [selectedMonth, setSelectedMonth] = useState("September"); // state is used to give it a default year
 
   const monthChangerHandler = (pickMonth) => {
     console.log(pickMonth);
@@ -17,13 +17,14 @@ function BirthdayDates(props) {
   });
 
   return (
-    <ul >
+    <ul  className ={styles.bDayList} >
       <br />
       <Dropwdown onChangeMonth={monthChangerHandler} selected={selectedMonth} />
       <br />
 
       {pickMonth.map((dates, indexKey) => (
         <BirthdayDisplayer
+       
           key={indexKey}
           name={dates.name}
           birthdayDate={dates.birthdayDate}

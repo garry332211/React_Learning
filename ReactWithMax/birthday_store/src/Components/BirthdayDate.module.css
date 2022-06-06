@@ -1,5 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap");
+
+.container{
+  max-width: 700px;
+  width: 100%;
+  padding: 25px 30px;
+  border-radius: 25px;
+  background: linear-gradient(90deg, rgb(142, 189, 56) 20%, rgb(145, 90, 150) 75%);
+}
+.container select {
+  max-width: 700px;
+  width: 25%;
+  padding: 8px 30px;
+  border-radius: 25px;
+  background: linear-gradient(90deg, rgb(31, 92, 184) 20%, rgb(197, 39, 211) 75%);
+  color:white;
+  font-weight: bolder;
+  font-family: 'Finger Paint', cursive;
+  letter-spacing: 1px;
+
+}
+
+.container select option {
+ 
+color: rgb(0, 0, 0);
+font-size: large;
+font-family: 'Finger Paint', cursive;
+}
+
+
 .bDayList {
     list-style: none;
     margin: 0;
     padding: 0;
+ 
   }
+
+  .item {
+    margin: 1rem 0;
+    background: linear-gradient(90deg, rgb(196, 98, 103) 20%, rgb(175, 56, 175) 75%);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    color: white;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    border-radius: 20px;
+
+  }
+
+  .item h1 {
+    font-family: 'Yatra One', cursive;
+    letter-spacing: 10px;
+    line-height: 2;
+    
+    
+  }
+  .item h3 {
+    font-family: 'Yuji Mai', serif;
+    background: -webkit-linear-gradient(rgb(145, 238, 58), rgb(243, 239, 3));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  }
+  
+  .item h2 {
+    font-family: 'Yuji Mai', serif;
+    background: -webkit-linear-gradient(rgb(255, 255, 255), rgb(0, 253, 232));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  }
+  

@@ -1,15 +1,15 @@
 import React from 'react'
-
+import styles from "./BirthdayDate.module.css"
 function BirthdayDisplayer(props) {
   return (
  
-<div className='container'>
+<div className={styles.item}>
   
-           <h1> {props.name }
+           <h1> {props.name }</h1>
          
-          { props.birthdayDate}
+          <h3>{ props.birthdayDate}</h3>
           
-          {props.bdayMonth}</h1>
+          <h2>{props.bdayMonth}</h2>
       
      
     </div>

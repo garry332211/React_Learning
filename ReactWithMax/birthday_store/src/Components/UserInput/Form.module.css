@@ -22,6 +22,7 @@ body{
     padding: 25px 30px;
     border-radius: 25px;
     background: linear-gradient(90deg, rgba(56,188,189,1) 20%, rgba(194,64,126,1) 75%);
+    
 }
 
 .container .heading{
@@ -102,7 +103,7 @@ form .button input {
 form .button input {
     padding: 5px 5px;
     margin: 37px 10px 0 0;
-    height: 45%;
+    height: 50%;
     width: 100%;
     outline: none;
     color: rgb(255, 255, 255);
@@ -115,25 +116,41 @@ form .button input {
 
 }
 
+ form button{
+    padding: 5px 5px;
+    margin: 37px 10px 0 0;
+    height: 50%;
+    width: 100%;
+    outline: none;
+    color: rgb(255, 255, 255);
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius:5px;
+    letter-spacing: 5px;
+    background: linear-gradient(-135deg, #05073a, #dc0606ca);
+ }
+
 form .button input:hover{
     cursor: pointer;
     color: rgb(115, 255, 0);
 }
 
-@media(max-width:584px) {
+@media(max-width:412px) {
     .container{
         max-width: 100%;
     }
 
     form .card-details .card-box{
-        max-width: 100%;
-        margin-bottom: 15px;
+        max-width: 50%;
+        margin-bottom: 25px;
+        display:contents;
     }
 
     form .button input {
-        padding: 10px 5px;
-        margin: 25px 10px 0 0;
-        height:70%;
+        
+        margin: 10px auto;
+        height:60%;
         width: 100%;
         outline: none;
         color: rgb(255, 255, 255);
@@ -143,8 +160,11 @@ form .button input:hover{
         border-radius:5px;
         letter-spacing: 5px;
         background: linear-gradient(-135deg, #05073a, #dc0606ca);
+        text-align: center;
+   
     
     }
+   
 
     .container{
         max-width: 700px;
