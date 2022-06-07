@@ -5,7 +5,8 @@ import { useState } from "react";
 import styles from "./BirthdayDate.module.css"
 
 function BirthdayDates(props) {
-  const [selectedMonth, setSelectedMonth] = useState("September"); // state is used to give it a default year
+  const [selectedMonth, setSelectedMonth] = useState("January"); // state is used to give it a default year
+  const [hideAllBday, setAllBday]  = useState(false)
 
   const monthChangerHandler = (pickMonth) => {
     console.log(pickMonth);
@@ -16,21 +17,36 @@ function BirthdayDates(props) {
     return newVar.bdayMonth === selectedMonth;
   });
 
+  const showBday =() =>{
+    setAllBday(true);
+  }
+  const hideAll =() =>{
+    setAllBday(false);
+  }
+
   return (
     <ul  className ={styles.bDayList} >
       <br />
-      <Dropwdown onChangeMonth={monthChangerHandler} selected={selectedMonth} />
-      <br />
 
-      {pickMonth.map((dates, indexKey) => (
-        <BirthdayDisplayer
+      {!hideAllBday && <button type="button" onClick={showBday}>
+          Show All BirthDays
+        </button>}
+      {hideAllBday && <Dropwdown onChangeMonth={monthChangerHandler} selected={selectedMonth} />}
+      <br />
+     
+      {hideAllBday && pickMonth.map((dates, indexKey) => (
+         <BirthdayDisplayer
        
           key={indexKey}
           name={dates.name}
           birthdayDate={dates.birthdayDate}
           bdayMonth={dates.bdayMonth}
         />
+        
       ))}
+       {hideAllBday && <button type="button" onClick={hideAll}>
+          Hide All Birthdays
+        </button>}
     </ul>
   );
 }

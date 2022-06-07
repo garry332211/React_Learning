@@ -5,6 +5,7 @@ import BirthdateForm from "./Components/UserInput/BirthdateForm";
 import apps  from "./App.module.css";
 import styles from "./Components/BirthdayDate.module.css"
 
+
 function App() {
   const allDates = [
     { name: "Jovan", birthdayDate: "23/01/2020", bdayMonth: "January" },
@@ -20,7 +21,7 @@ function App() {
     { name: "Karan", birthdayDate: "07/06/1995", bdayMonth: "June" },
     { name: "Ekam", birthdayDate: "27/06/1995", bdayMonth: "June" },
     { name: "Bunty", birthdayDate: "06/07/1982", bdayMonth: "July" },
-    { name: "Guri(Myself)", birthdayDate: "07/07/1994", bdayMonth: "July" },
+    { name: "Guri", birthdayDate: "07/07/1994", bdayMonth: "July" },
     { name: "Daman", birthdayDate: "13/07/2003", bdayMonth: "July" },
     { name: "Nonu", birthdayDate: "15/07/1992", bdayMonth: "July" },
     { name: "Mani ", birthdayDate: "02/08/1990", bdayMonth: "August" },
@@ -35,8 +36,10 @@ function App() {
 
   const [allInputs, setallinputs] = useState(allDates);
 
-  const [hidebtn, setHidebtn]  = useState(false)
-  const [hideAllBday, setAllBday]  = useState(false)
+  const[hideForm, setHideForm] = useState(false);
+  
+
+ 
 
   const finalHandler = (inputs) => {
     setallinputs((prevData) => {
@@ -46,30 +49,27 @@ function App() {
     console.log(inputs, "From App.js");
   };
 
-  const showBtn =() =>{
-    setHidebtn(true);
+  const formHideHandler =()=>{
+    setHideForm(true);
   }
-  const showBday =() =>{
-    setAllBday(true);
+
+  const cancelFomHandler =()=>{
+    setHideForm(false);
   }
-  const showForm =() =>{
-    setHidebtn(false);
-  }
+ 
   return (
     <div className={apps.App}>
+  
       <div className={styles.container}>
-        <div className={apps.button}>
-        {!hidebtn && <button type="button" onClick={showBtn}>
-          Add New Birthday
-        </button>}</div>
-
-       {hidebtn && <BirthdateForm formInputData={finalHandler} hideForm={showForm}/> }
-
-       <div className={apps.button}>
-        {!hidebtn && <button type="button" onClick={showBday}>
-          Show All BirthDays
-        </button>}</div>
-        {hideAllBday &&<BirthdayDates allDates={allInputs} />}
+        
+      <div className={apps.button}>
+             {!hideForm && <button type="button" onClick={formHideHandler} >Add New Birthday</button> }
+            </div>
+         {hideForm &&<BirthdateForm formInputData={finalHandler} cancelForm ={cancelFomHandler}/> }
+           
+       
+         {!hideForm && <BirthdayDates allDates={allInputs} />}
+         {hideForm && <BirthdayDates allDates={allInputs} />}
         </div>
     </div>
   );

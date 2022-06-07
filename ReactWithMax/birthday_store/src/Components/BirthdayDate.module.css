@@ -5,11 +5,11 @@
   width: 100%;
   padding: 25px 30px;
   border-radius: 25px;
-  background: linear-gradient(90deg, rgb(142, 189, 56) 20%, rgb(145, 90, 150) 75%);
+  background: linear-gradient(90deg, rgb(82, 61, 61) 20%, rgb(94, 131, 35) 75%);
 }
 .container select {
   max-width: 700px;
-  width: 25%;
+  width: 100%;
   padding: 8px 30px;
   border-radius: 25px;
   background: linear-gradient(90deg, rgb(31, 92, 184) 20%, rgb(197, 39, 211) 75%);
@@ -36,11 +36,10 @@ font-family: 'Finger Paint', cursive;
   }
 
   .item {
-    margin: 1rem 0;
+    margin: 0.5rem 0;
     background: linear-gradient(90deg, rgb(196, 98, 103) 20%, rgb(175, 56, 175) 75%);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-    color: white;
-    padding: 1rem 2rem;
+    padding: 0.1rem 0rem;
     cursor: pointer;
     border-radius: 20px;
 
@@ -49,7 +48,7 @@ font-family: 'Finger Paint', cursive;
   .item h1 {
     font-family: 'Yatra One', cursive;
     letter-spacing: 10px;
-    line-height: 2;
+    line-height: 1.5;
     
     
   }

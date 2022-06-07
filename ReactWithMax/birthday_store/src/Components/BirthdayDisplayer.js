@@ -5,9 +5,8 @@ function BirthdayDisplayer(props) {
  
 <div className={styles.item}>
   
-           <h1> {props.name }</h1>
-         
-          <h3>{ props.birthdayDate}</h3>
+           <h1>{props.name } </h1>
+           <h3>{ props.birthdayDate}</h3>
           
           <h2>{props.bdayMonth}</h2>
       
