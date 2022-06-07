@@ -4,6 +4,7 @@ import classes from "./AddUser.module.css";
 import Button from "../UI/Button";
 import ErrorModal from "../UI/ErrorModal";
 
+
 const AddUserForm = (props) => {
   const [userName, setUserName] = useState("");
   const [userAge, setUserAge] = useState("");
@@ -40,7 +41,7 @@ const AddUserForm = (props) => {
       setError(null)
   }
   return (
-    <div>
+    <React.Fragment>
      {error && <ErrorModal title={error.title} message={error.message} whenPressOk={hideTheErrorCard}/>}
       <Card className={classes.input}>
         <form onSubmit={onFormSubmit}>
@@ -61,7 +62,7 @@ const AddUserForm = (props) => {
           <Button type="submit">Add User</Button>
         </form>
       </Card>
-    </div>
+    </React.Fragment>
   );
 };
 
