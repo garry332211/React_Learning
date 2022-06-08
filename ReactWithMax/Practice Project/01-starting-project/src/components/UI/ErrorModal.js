@@ -19,7 +19,7 @@ const ModalOverlay = (props) => {
       </div>
 
       <footer className={classes.actions}>
-        <Button whenPressOk={props.whenPressOk}>Okay</Button>
+        <Button type='button' onClickProp={props.whenPressOk}>Okay</Button>
       </footer>
     </Card>
   );
@@ -38,7 +38,7 @@ const ErrorModal = (props) => {
         <ModalOverlay
           title={props.title}
           message={props.message}
-          onClick={props.whenPressOk}
+          whenPressOk={props.whenPressOk}
         />,
         document.getElementById("modal-root")
       )}

@@ -21,7 +21,7 @@ function App() {
       })
 
 
-      console.log(usName, usAge, "Coming From App.js")
+      console.log(usName, usAge)
     }
   return (
     <div>
