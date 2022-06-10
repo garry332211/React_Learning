@@ -3,6 +3,7 @@ import Card from "../UI/Card";
 import Button from "../UI/Button";
 import "./Form.css";
 import ErrorModal from "../UI/ErrorModal";
+
 const Form = (props) => {
   const inputRefName = useRef();
   const inputRefDate = useRef();
@@ -95,13 +96,15 @@ const Form = (props) => {
                 <div className="button">
                   <Button type="submit">Add Birthday</Button>
                 </div>
-                {/* <div className="text">By Gurvinder Sran</div> */}
+                {/* <div className="text">By Gurvinder Sran</div>  */}
                 <div className="text2"> {list.map((a,keys)=><div key={keys}>
                   Your Birth Date Has Been Added
                   <p>{a.name}</p>
                   <p>{a.bdayDate}</p>
                   <p>{a.bdayMonth}</p>
-                </div>)}</div>
+                </div>
+                )} 
+                </div>
               </div>
             </div>
           </div>

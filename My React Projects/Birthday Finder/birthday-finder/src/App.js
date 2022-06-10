@@ -1,10 +1,7 @@
 
 import { useState } from 'react';
 import './App.css';
-
-
-import Form from './components/UserInput/Form';
-import DisplayBirthdays from './components/UserOutput/DisplayBirthdays';
+import ShowSubmitData from './components/UserOutput/ShowSubmitData';
 const App =(props)=> {
 
   const [inputs, setInputs] = useState([
@@ -24,8 +21,8 @@ const App =(props)=> {
   }
   return (
     <>
-      <Form formInputData ={finalHandler}/>
-      <DisplayBirthdays user={inputs} />
+      <ShowSubmitData showOutputData ={finalHandler} sendToApp={inputs}/>
+      
     
     </>
   );
