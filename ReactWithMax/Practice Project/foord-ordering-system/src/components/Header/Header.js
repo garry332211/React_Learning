@@ -5,7 +5,7 @@ import HeaderNavbar from './HeaderNavbar'
 //Importing Icons
 import RestaurantMenuIcon from '@mui/icons-material/RestaurantMenu';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
-import ButtonHeader from './ButtonHeader';
+
 const Header = () => {
   return (
     <>
@@ -18,9 +18,8 @@ const Header = () => {
             <div className="header_right">
             <HeaderNavbar  Icon ={RestaurantMenuIcon} title="Menu"/>
             <HeaderNavbar  Icon ={LocationOnIcon} title="Find A Store"/>
-            <div className="header_button">
-            <ButtonHeader></ButtonHeader>
-            </div>
+            
+           
             </div>
     
 
