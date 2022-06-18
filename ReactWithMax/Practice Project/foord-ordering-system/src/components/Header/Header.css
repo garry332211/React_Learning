@@ -1,37 +1,83 @@
-@import url('https://fonts.googleapis.com/css2?family=Fascinate&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fascinate&display=swap");
 
-.header{
-    position: static;
-    top:0;
-    left:0;
-    width:100%;
-    height: 5rem;
-    background-color: whitesmoke;
-    color:coral;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 10%;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.25); /* this gives the nice shaddow effect */
-    
+.header {
+  position:sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5rem;
+  background: linear-gradient(
+    90deg,
+    rgba(155, 207, 166, 1) 21%,
+    rgba(210, 72, 72, 1) 100%
+  );
+  color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25); /* this gives the nice shaddow effect */
 }
-header >h1{
-    font-size: 30px;
-    font-family: 'Fascinate', cursive;
-    
+header > h1 {
+  font-size: 30px;
+  font-family: "Fascinate", cursive;
 }
 
-
-.header_left{
-    display: flex;
+.header_left {
+  display: flex;
 }
 
 /* get responsive image */
-.header_left > img{
-    object-fit: contain; 
-    height: 60px;
+.header_left > img {
+  object-fit: contain;
+  height: 60px;
 }
 
-.header_right{
-    display: flex;
+.header_right {
+  display: flex;
+}
+.header_right .MuiSvgIcon-root {
+  color: rgb(0, 0, 0) !important;
+  font-size: 40px;
+}
+
+.main-image {
+  width: 100%;
+  height: 25rem;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.main-image img {
+  width: 110%;
+  height: 100%;
+  object-fit: cover;
+  transform: rotateZ(-5deg) translateY(-6rem) translateX(-1rem);
+}
+
+@media (max-width: 500px) {
+  .header > h1 {
+    font-size: 25px;
+    position: relative;
+    right: 20px;
+    font-family: "Fascinate", cursive;
+    
+  }
+  .header{
+    position:static;
+  }
+
+  .main-image img {
+    width: 110%;
+    
+    object-fit: cover;
+    transform: rotateZ(-5deg) translateY(-2rem) translateX(-1rem);
+  }
+  .header_right .MuiSvgIcon-root {
+    color: rgb(0, 0, 0) !important;
+    font-size: 40px;
+    
+  }
+
+
 }
