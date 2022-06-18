@@ -27,6 +27,7 @@
 .infoSection > p {
   font-size: 25px;
   font-family: 'Mali', cursive;
+  margin: 2px 20px
 }
 .infoSection .menu{
     text-align: center;
