@@ -23,14 +23,15 @@ header > h1 {
   font-family: "Fascinate", cursive;
 }
 
-.header_left {
-  display: flex;
-}
 
 /* get responsive image */
-.header_left > img {
-  object-fit: contain;
-  height: 60px;
+.header > img {
+position: absolute;
+height: 60px;
+bottom: 10px;
+margin-left:12rem;
+
+
 }
 
 .header_right {
@@ -53,7 +54,7 @@ header > h1 {
 }
 
 .header_right .MuiSvgIcon-root{
-  color: #b94517;
+  color: #ffffff;
 }
 .header_right .MuiSvgIcon-root:hover {
   color: whitesmoke !important;;
@@ -63,8 +64,7 @@ header > h1 {
   cursor: pointer;
   font: inherit;
   border: none;
- 
-  color: white;
+  background: linear-gradient(90deg, rgba(52,55,193,1) 0%, rgba(33,34,74,1) 13%, rgba(19,19,31,1) 92%);
   padding: 0.35rem 1rem;
   display: flex;
   justify-content: space-around;
@@ -89,6 +89,7 @@ header > h1 {
   width: 1.35rem;
   height: 1.35rem;
   margin-right: 1.5rem;
+  
   
 
 }
@@ -128,7 +129,7 @@ header > h1 {
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
   .header > h1 {
     font-size: 25px;
     position: relative;
@@ -155,7 +156,12 @@ header > h1 {
     font-weight: 400 !important;
   }
 
-  .header_left > img {
-    margin-right: 5rem;
+  .header > img {
+    position: relative;
+    height: 55px;
+    bottom: 1px;
+    margin-left:-1rem;
+
+
   }
 }

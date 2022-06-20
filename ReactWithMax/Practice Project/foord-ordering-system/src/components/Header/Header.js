@@ -1,22 +1,32 @@
-import React from "react";
+import React,{useContext} from "react";
+import CartContext from "../ContextManagement/cart-context";
+
 import "./Header.css";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 import Burger from "./headerLogo.png";
 
-const Header = () => {
+const Header = (props) => {
+
+      const cartCtx =  useContext(CartContext)
+
+      //to add number of cart items 
+      const numberOfCartItems = cartCtx.items.reduce((curNumber, item) => {
+        return curNumber + item.amount; 
+      },0);
+
   return (
     <>
       <header className="header">
         <h1>Food Mania</h1>
-        <div className="header_left">
+        
           <img src={Burger} alt="" />
-        </div>
+       
 
         <div className="header_right">
-          <button className="button">
+          <button onClick={props.openCart} className="button">
             <span className="icon"><ShoppingCartIcon /></span>
-            <span className="badge">34</span>
+            <span className="badge">{numberOfCartItems}</span>
           </button>
         </div>
       </header>
