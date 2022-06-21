@@ -24,7 +24,7 @@ const DUMMY_MEALS = [
   },
   {
     id: "m5",
-    name: "Thali (Punjabi, Marathi, Gujrati, All Indian)",
+    name: "Thali (Punjabi, Marathi, All Indian)",
     description: "Delecius Indian curries...",
     price: 18.99,
   },
@@ -42,7 +42,7 @@ const DUMMY_MEALS = [
   },
   {
     id: "m8",
-    name: "Biriyani, Khichdi, Kebaab(veg)",
+    name: "Biriyani, Khichdi",
     description: "Delecius Indian curries...",
     price: 18.99,
   },

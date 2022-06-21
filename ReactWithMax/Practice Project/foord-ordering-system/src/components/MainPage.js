@@ -21,7 +21,7 @@ const MainPage = () => {
 
         <br/>
 
-        <p>
+        <p className="secondPargaraph">
           The ingredients that are being used are traditional herbs and spices
           which will make you sniff the opulent aroma of Indian subcontinent. At
           the same time our cordial staffs will be there to ensure that you are

@@ -23,3 +23,12 @@
       transform: translateY(0);
     }
   }
+
+  @media ( max-width:600px){
+  
+    
+    .meals ul {
+      font-size: 12px;
+    }
+    
+  }

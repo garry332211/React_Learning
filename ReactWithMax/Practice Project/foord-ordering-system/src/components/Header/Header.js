@@ -4,7 +4,7 @@ import CartContext from "../ContextManagement/cart-context";
 import "./Header.css";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
-import Burger from "./headerLogo.png";
+import Thali from "./thali.png";
 
 const Header = (props) => {
 
@@ -20,7 +20,7 @@ const Header = (props) => {
       <header className="header">
         <h1>Food Mania</h1>
         
-          <img src={Burger} alt="" />
+          <img src={Thali} alt="" />
        
 
         <div className="header_right">
@@ -31,7 +31,7 @@ const Header = (props) => {
         </div>
       </header>
 
-      {/* Adding Image in the Under The Header */}
+      {/* Adding Image Under The Header */}
       <div className="main-image">
         <img
           src="https://cdn.pixabay.com/photo/2014/04/05/11/27/buffet-315691_960_720.jpg"

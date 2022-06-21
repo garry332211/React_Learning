@@ -7,6 +7,7 @@ import Header from './components/Header/Header';
 import MainPage from './components/MainPage';
 import Meals from './components/Meals/Meals';
 import CartProvider from './components/ContextManagement/CartProvider';
+import Footer from './components/Header/Footer';
 
 
 function App() {
@@ -28,6 +29,9 @@ function App() {
       <main>
         <Meals />
       </main>
+      <footer>
+        <Footer />
+      </footer>
     </CartProvider>
   );
 }

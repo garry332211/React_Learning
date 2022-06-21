@@ -33,12 +33,12 @@
 .infoSection .menu{
     text-align: center;
 }
+.secondPargaraph{
+  text-align: center;
+}
 
 @media (max-width: 500px) {
-  .mainFile {
-    position: relative;
-    top: 0;
-  }
+ 
 
   .mainFile .heading {
     font-size: 15px;
