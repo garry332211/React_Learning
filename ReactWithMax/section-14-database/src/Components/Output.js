@@ -1,9 +1,11 @@
 import React from "react";
 import "./Output.css";
 
+
 const Output = (props) => {
   
   return (
+  
     <div className="outputMain">
       {props.movies.map((list, key) => (
         <div className="list" key={key}>
@@ -13,6 +15,7 @@ const Output = (props) => {
         </div>
       ))}
     </div>
+    
   );
 };
 
