@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, {  useEffect, useState } from "react";
 import "./AvailableMeals.css";
 import Card from "../UI/Card";
 import MealItem from "./MealItems";
@@ -8,17 +8,18 @@ const AvailableMeals = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const fetchMeals = useCallback(async () => {
+  useEffect(() => {
     setIsLoading(true);
-
-    try {
+    const fetchMeals = async () => {
       const response = await fetch(
         "https://react-http-4dcfb-default-rtdb.firebaseio.com/movies/meals.json"
       );
+   
 
       if (!response.ok) {
-        throw new error("Something Went Wrong");
+        throw new Error('Something went wrong!');
       }
+
       const data = await response.json();
       const loaddedMeals = [];
 
@@ -32,15 +33,19 @@ const AvailableMeals = () => {
       }
 
       setMealsitems(loaddedMeals);
-    } catch (error) {
+      setIsLoading(false);
+     
+    };
+
+    fetchMeals().catch((error) => {
+      setIsLoading(false);
       setError(error.message);
-    }
-    setIsLoading(false);
+    })
+   
+  
   }, []);
 
-  useEffect(() => {
-    fetchMeals();
-  }, [fetchMeals]);
+ 
 
   const listAllMeals = mealsItem.map((meal) => (
     <MealItem
