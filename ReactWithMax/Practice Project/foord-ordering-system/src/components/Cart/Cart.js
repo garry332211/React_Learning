@@ -28,7 +28,7 @@ const Cart = (props) => {
     setIsCheckout(true)
   }
 
-  //form submit with items along with userDetails
+  //form submission with items along with userDetails
   const orderSubmit = async(userDetails) => {
     setIsSubmitting(true);
     await fetch("https://react-http-4dcfb-default-rtdb.firebaseio.com/orders.json", {
@@ -78,7 +78,7 @@ const Cart = (props) => {
     </>)
 
     const isSubmittingModal = <p>Sending Your Order To The Store</p>
-    const didSubmittingModal = (<><p>Your Order Has Been Placed ! Will Be Ready In 20 minutes</p>  
+    const didSubmittingModal = (<><p>Your Order Has Been Placed !It Will Be Ready In 20 minutes</p>  
     <div className="actions">
     <button onClick={props.cartCloseBtn} className="button">
       Close

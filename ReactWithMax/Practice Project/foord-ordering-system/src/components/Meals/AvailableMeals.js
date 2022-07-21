@@ -1,4 +1,4 @@
-import React, {  useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./AvailableMeals.css";
 import Card from "../UI/Card";
 import MealItem from "./MealItems";
@@ -8,16 +8,16 @@ const AvailableMeals = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
+  //fetching the meals from Firebase
   useEffect(() => {
     setIsLoading(true);
     const fetchMeals = async () => {
       const response = await fetch(
         "https://react-http-4dcfb-default-rtdb.firebaseio.com/movies/meals.json"
       );
-   
 
       if (!response.ok) {
-        throw new Error('Something went wrong!');
+        throw new Error("Something went wrong!");
       }
 
       const data = await response.json();
@@ -34,18 +34,13 @@ const AvailableMeals = () => {
 
       setMealsitems(loaddedMeals);
       setIsLoading(false);
-     
     };
 
     fetchMeals().catch((error) => {
       setIsLoading(false);
       setError(error.message);
-    })
-   
-  
+    });
   }, []);
-
- 
 
   const listAllMeals = mealsItem.map((meal) => (
     <MealItem

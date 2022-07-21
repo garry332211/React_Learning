@@ -2,7 +2,8 @@ import React, { useRef, useState } from "react";
 import classes from "./Checkout.module.css";
 
 const isEmpty = (value) => value.trim() === "";
-const lengthOfInput = (value) => value.trim().length > 4 ||  value.trim().length < 4
+const lengthOfInput = (value) =>
+  value.trim().length > 4 || value.trim().length < 4;
 
 const Checkout = (props) => {
   const [fromInputsValid, setFormInputsValid] = useState({
@@ -53,9 +54,9 @@ const Checkout = (props) => {
         formInputs.city
       );
       props.onConfrim({
-        name: formInputs.name, 
+        name: formInputs.name,
         street: formInputs.street,
-        postal:formInputs.postal,
+        postal: formInputs.postal,
         city: formInputs.city,
       });
     } else {
@@ -63,12 +64,19 @@ const Checkout = (props) => {
     }
   };
   const inavlid = {
-    nameError:`${classes.control} ${fromInputsValid.name ? " " :classes.invalid}`,
-    streetError:`${classes.control} ${fromInputsValid.street ? " " :classes.invalid}`,
-    postalError:`${classes.control} ${fromInputsValid.postal ? " " :classes.invalid}`,
-    cityError:`${classes.control} ${fromInputsValid.city ? " " :classes.invalid}`,
-  }
-  
+    nameError: `${classes.control} ${
+      fromInputsValid.name ? " " : classes.invalid
+    }`,
+    streetError: `${classes.control} ${
+      fromInputsValid.street ? " " : classes.invalid
+    }`,
+    postalError: `${classes.control} ${
+      fromInputsValid.postal ? " " : classes.invalid
+    }`,
+    cityError: `${classes.control} ${
+      fromInputsValid.city ? " " : classes.invalid
+    }`,
+  };
 
   return (
     <form className={classes.form} onSubmit={confirmHandler}>

@@ -23,15 +23,12 @@ header > h1 {
   font-family: "Fascinate", cursive;
 }
 
-
 /* get responsive image */
 .header > img {
-position: absolute;
-height: 60px;
-bottom: 10px;
-margin-left:12rem;
-
-
+  position: absolute;
+  height: 60px;
+  bottom: 10px;
+  margin-left: 12rem;
 }
 
 .header_right {
@@ -53,11 +50,11 @@ margin-left:12rem;
   transform: rotateZ(-5deg) translateY(-6rem) translateX(-1rem);
 }
 
-.header_right .MuiSvgIcon-root{
+.header_right .MuiSvgIcon-root {
   color: #291d1d;
 }
 .header_right .MuiSvgIcon-root:hover {
-  color: rgb(240, 5, 5) !important;;
+  color: rgb(240, 5, 5) !important;
 }
 
 .header_right .button {
@@ -74,41 +71,43 @@ margin-left:12rem;
   position: relative;
   bottom: 10%;
   right: 2%;
-
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
   border-radius: 14px;
-  background-color: transparent;
+  background: linear-gradient(
+    90deg,
+    rgba(227, 236, 246, 1) 6%,
+    rgba(241, 238, 235, 1) 50%,
+    rgba(215, 230, 252, 1) 100%
+  );
 }
 
 .button:hover,
 .button:active {
-  background-color: #eeeeee;
+  background-color: #d31a1a;
 }
 
 .header_right .button .icon {
   width: 1.35rem;
   height: 1.35rem;
   margin-right: 1.5rem;
-  
-  
-
 }
 
 .header_right .badge {
-  background-color: #b94517;
-  padding: 0.25rem 0.3rem;
+  background: rgb(0, 0, 0);
+  padding: 0.25rem 1rem;
   border-radius: 25px;
   /* margin-left: 1rem; */
   font-weight: bold;
+  color: white;
 }
 
 .button:hover .badge,
 .button:active .badge {
-  background-color: #92320c;
+  background: rgb(31, 92, 161);
 }
 
 .bump {
-  animation: bump 300ms ease-out;
+  animation: bump 500ms ease-out;
 }
 
 @keyframes bump {
@@ -138,8 +137,6 @@ margin-left:12rem;
   }
   .header {
     position: sticky;
-    
-    
   }
 
   .main-image img {
@@ -149,12 +146,9 @@ margin-left:12rem;
     margin-right: 10px !important;
   }
 
-
   .header_right .button {
     padding: 0.35rem 0.8rem !important;
-
     margin-right: -30px;
-
     font-weight: 400 !important;
   }
 
@@ -162,9 +156,6 @@ margin-left:12rem;
     position: relative;
     height: 55px;
     bottom: 1px;
-    margin-left:-2rem;
-    
-
-
+    margin-left: -2rem;
   }
 }
